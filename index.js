@@ -74,5 +74,10 @@ inquirer.prompt([
     <img src="${response.img}">
     `
 
-    console.log(template)
+    fs.writeFile("README.md", template, function(err) {
+        if(err) {
+            console.log("error")
+        } 
+        console.log("success")
+    })
 })
