@@ -49,4 +49,30 @@ inquirer.prompt([
     },
 ]).then(function(response) {
     console.log(response);
+    var template = `
+    # ${response.name}
+
+    ## Purpose
+    ${response.purpose}
+    
+    ## Process
+    ${response.process}
+    
+    ## Languages 
+    JavaScript <img src="https://progress-bar.dev/${response.javascript}">
+    <br>
+    HTML <img src="https://progress-bar.dev/${response.html}">
+    <br>
+    CSS <img src="https://progress-bar.dev/${response.css}">
+    
+    ## Links
+    [GitHub](${response.github})
+    <br>
+    [Deployed](${response.deployed})
+    
+    ## Visuals
+    <img src="${response.img}">
+    `
+
+    console.log(template)
 })
